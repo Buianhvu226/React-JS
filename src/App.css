@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.youtube-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 1200px) {
+  .youtube-list {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 900px) {
+  .youtube-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .youtube-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.youtube-image {
+  height: 250px;
+  margin-bottom: 15px;
+}
+
+.youtube-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.youtube-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0 20px;
+}
+
+.youtube-content img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.youtube-content-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.youtube-content-info h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 5px; /* Increase margin-bottom for more space */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.youtube-content-info h4 {
+  color: gray;
+  font-size: 1.2rem;
+  font-weight: 350;
+  margin-top: 0; /* Ensure no extra margin at the top */
+  margin-bottom: 5px;
 }
